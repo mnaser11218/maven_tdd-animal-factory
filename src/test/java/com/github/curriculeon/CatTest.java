@@ -1,6 +1,8 @@
 package com.github.curriculeon;
 
+import com.github.curriculeon.animals.Animal;
 import com.github.curriculeon.animals.Cat;
+import com.github.curriculeon.animals.Mammal;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -69,10 +71,30 @@ public class CatTest {
     }
 
     // TODO - Create tests for `Integer getId()`
+    @Test
+    public void testGetId(){
+        //given
+        Cat cat = new Cat("name", new Date(), 1);
+        //then
+        int id = cat.getId();
+        Assert.assertEquals(1, id);
+    }
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
+    @Test
+    public void testAnimalInheritance(){
+        Cat cat = new Cat("name", new Date(), 1);
+
+        Assert.assertTrue(cat instanceof Animal);
+    }
+
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
 
+    @Test
+    public void testMammalnheritance(){
+        Cat cat = new Cat("name", new Date(), 1);
 
+        Assert.assertTrue(cat instanceof Mammal);
+    }
     @Test
     public void constructorTest() {
         // Given (cat data)
