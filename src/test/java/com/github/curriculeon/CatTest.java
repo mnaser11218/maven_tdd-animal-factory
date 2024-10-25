@@ -25,13 +25,49 @@ public class CatTest {
 
     }
 
-
-
-
-
     // TODO - Create tests for `speak`
+    @Test
+    public void testSpeak(){
+        //given
+        Cat cat = new Cat("name", new Date(), 1);
+        //when
+        String expected = cat.speak();
+        //then
+        Assert.assertEquals(expected, "meow!");
+
+    }
+
+
+
     // TODO - Create tests for `setBirthDate(Date birthDate)`
+    @Test
+    public void testSetBirthDate(){
+        //given
+        Cat cat = new Cat("name", new Date(), 1);
+        //when
+        Date expected = new Date();
+        cat.setBirthDate(expected);
+        //then
+        Assert.assertEquals(cat.getBirthDate(), expected);
+
+    }
+
     // TODO - Create tests for `void eat(Food food)`
+    @Test
+    public void testEat(){
+        //given
+        Cat cat = new Cat("name", new Date(), 1);
+
+        //when
+        cat.eat(new Food());
+        int expected = cat.getNumberOfMealsEaten();
+
+        //then
+        Assert.assertEquals(1, expected);
+
+
+    }
+
     // TODO - Create tests for `Integer getId()`
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
